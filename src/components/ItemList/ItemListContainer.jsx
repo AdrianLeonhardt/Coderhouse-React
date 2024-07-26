@@ -1,8 +1,12 @@
-import React from 'react'
+import productosMolderia from "../../productos"
+import Itemlist from "./Itemlist"
+import "../../App.css"
 
 function ItemListContainer() {
   return (
-    <div>ItemListContainer</div>
+    <div id='container-productos'>
+      {productosMolderia.map(productos=>(<Itemlist key={productos.id}{...productos}/>))}
+    </div>
   )
 }
 

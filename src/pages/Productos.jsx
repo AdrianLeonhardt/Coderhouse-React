@@ -1,7 +1,11 @@
+import ItemListContainer from "../components/ItemList/ItemListContainer"
+
 
 function Productos() {
   return (
-    <div>Productos</div>
+    <>
+        <ItemListContainer/>
+    </>
   )
 }
 
