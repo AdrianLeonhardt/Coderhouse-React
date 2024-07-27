@@ -1,11 +1,14 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
-function Itemlist({nombre, precio}) {
+function Itemlist({id, nombre, precio}) {
   return (
-    <div className='card'>
+    //<div className='card'>
+    <Link to={`/productos/${id}`} className='card'>
         <h2>{nombre}</h2>
         <h2>{precio}</h2>
-    </div>
+    </Link>
+    //</div>
   )
 }
 

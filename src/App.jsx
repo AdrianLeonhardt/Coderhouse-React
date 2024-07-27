@@ -17,7 +17,8 @@ function App() {
           <Route exact path='/' element={<Navbar/>}> 
             <Route index element={<Inicio/>}/>
             <Route path='servicios' element={<Servicios/>}/>
-            <Route path='productos' element={<Productos/>}/>
+            <Route exact path='productos' element={<Productos/>}/>
+            <Route path='productos/:id' element={<ItemDetailContainer/>}/>
             <Route path='contacto' element={<Contactos/>}/>
           </Route>
         </Routes>
