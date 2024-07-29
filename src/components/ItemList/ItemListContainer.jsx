@@ -1,11 +1,28 @@
-import productosMolderia from "../../productos"
-import Itemlist from "./Itemlist"
-import "../../App.css"
+import { useEffect, useState } from "react";
+import alldata from "../../funciones/alldata.js";
+import ItemList from "./ItemList.jsx";
+import { useParams } from "react-router-dom";
 
 function ItemListContainer() {
-  return (
-    <div id='container-productos'>
-      {productosMolderia.map(productos=>(<Itemlist key={productos.id}{...productos}/>))}
+
+    const [productos, setProductos] = useState([]);
+    const {categoryId} = useParams();
+ 
+    useEffect(()=> {
+        alldata()
+            .then((res)=>{
+                if (categoryId) {
+                    setProductos(res.filter((prod)=> prod.categoria === categoryId));
+                }else {
+                    setProductos(res);
+                }
+                
+            })
+    }), [categoryId]
+  
+    return (
+    <div>
+        <ItemList productos={productos}/>
     </div>
   )
 }

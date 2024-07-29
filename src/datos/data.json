@@ -1,0 +1,34 @@
+[
+    {
+        "id": 1,
+        "nombre": "Pantalón Mom",
+        "descripcion": "Molde hecho con las últimas tendencias para pantalones mom fit.",
+        "precio": 10000.00,
+        "imagen": "/img/600x400.png",
+        "categoria": "pantalones"
+    },
+    {
+        "id": 2,
+        "nombre": "Camisa Casual",
+        "descripcion": "Molde para camisas casuales con un ajuste cómodo y moderno.",
+        "precio": 9000.00,
+        "imagen": "/img/600x400.png",
+        "categoria": "camisas"
+    },
+    {
+        "id": 3,
+        "nombre": "Short Deportivo",
+        "descripcion": "Molde para shorts deportivos, perfecto para actividades al aire libre.",
+        "precio": 7000.00,
+        "imagen": "/img/600x400.png",
+        "categoria": "shorts"
+    },
+    {
+        "id": 4,
+        "nombre": "Pantalón Jogger",
+        "descripcion": "Molde para pantalones jogger, ideales para un look casual y relajado.",
+        "precio": 9500.00,
+        "imagen": "/img/600x400.png",
+        "categoria": "pantalones"
+    }
+]

@@ -1,21 +1,24 @@
-import productosMolderia from "../../productos"
-import { useParams } from "react-router-dom"
+import { useEffect, useState } from "react"
+import datafilter from "../../funciones/datafilter";
+import ItemDetail from "./ItemDetail";
+import { useParams } from "react-router-dom";
 
-function ItemDetailContainer() {
-    const {id} = useParams();
+const ItemDetailContainer = () => {
 
-    const productos = productosMolderia.find(productos => productos.id === parseInt(id));
-
-    if(!productos){
-      return <h2>El producto no existe</h2>
-    }
-
-  return (
-    <div>
-      <h2>Detalle del producto</h2>
-      <h2>{productos.nombre}</h2>
-      <p>{productos.descripcion}</p>
-      <h3>{productos.precio}</h3>
+    const [item, setItem] = useState(null);
+    const id = useParams().id;
+    
+    useEffect(() => {
+        datafilter(Number(id))
+            .then((res)=> {
+                setItem(res);
+            })
+    },[id])
+    
+    
+    return (
+    <div className="item-detail-container">
+        {item && <ItemDetail item={item}/>}
     </div>
   )
 }

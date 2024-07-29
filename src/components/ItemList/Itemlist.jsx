@@ -1,14 +1,13 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+import Item from "./Item";
+import "../../App.css"
 
-function Itemlist({id, imagen ,nombre, precio}) {
+function ItemList({productos}) {
+    
   return (
-    <Link to={`/productos/${id}`} className='card'>
-        <img src={imagen}/>
-        <h2>{nombre}</h2>
-        <h2>${precio}</h2>
-    </Link>
+    <div className= 'container-productos'>
+        {productos.map((prod)=> <Item producto = {prod} key= {prod.id} />)}
+    </div>
   )
 }
 
-export default Itemlist
+export default ItemList
