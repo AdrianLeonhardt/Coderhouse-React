@@ -11,12 +11,15 @@ function Navbar() {
                 </Link>
             </div>
           <ul className="navbar-links">
+              <li><Link className="navbar-items" to = "/">Inicio</Link></li>
+              <li><Link className="navbar-items" to = "/category/all">Productos</Link></li>
               <li><Link className="navbar-items" to = "/category/pantalones">Pantalones</Link></li>
               <li><Link className="navbar-items" to = "/category/shorts">Shorts</Link></li>
               <li><Link className="navbar-items" to = "/category/camisas">Camisas</Link></li>
+              <li><CartWidget/></li>
           </ul>
         
-          <CartWidget/>
+          
       </nav>
     )
   }
